@@ -12,29 +12,29 @@ final class CognisErrorTests: XCTestCase {
 
     func testConnectionFailedErrorDescription() {
         let error = CognisError.connectionFailed(reason: "Network timeout")
-        XCTAssertEqual(error.errorDescription, "连接失败: Network timeout")
+        XCTAssertEqual(error.errorDescription, "Connection failed: Network timeout")
     }
 
     func testAuthenticationErrorDescription() {
         let error = CognisError.authenticationError(reason: "Invalid password")
-        XCTAssertEqual(error.errorDescription, "认证失败: Invalid password")
+        XCTAssertEqual(error.errorDescription, "Authentication failed: Invalid password")
     }
 
     func testSilentChannelErrorDescription() {
         let error = CognisError.silentChannelError(reason: "Channel closed")
-        XCTAssertEqual(error.errorDescription, "静默信道错误: Channel closed")
+        XCTAssertEqual(error.errorDescription, "Silent channel error: Channel closed")
     }
 
     func testSessionNotFoundErrorDescription() {
         let uuid = UUID()
         let error = CognisError.sessionNotFound(id: uuid)
-        XCTAssertEqual(error.errorDescription, "会话未找到: \(uuid)")
+        XCTAssertEqual(error.errorDescription, "Session not found: \(uuid)")
     }
 
     func testRecoverySuggestion() {
         let error = CognisError.connectionTimeout
         XCTAssertNotNil(error.recoverySuggestion)
-        XCTAssertTrue(error.recoverySuggestion!.contains("网络"))
+        XCTAssertTrue(error.recoverySuggestion!.contains("network"))
     }
 
     func testErrorEquality() {

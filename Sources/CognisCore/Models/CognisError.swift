@@ -119,67 +119,67 @@ public enum CognisError: Error, Sendable, LocalizedError, Equatable {
         switch self {
         // 连接错误
         case .connectionFailed(let reason):
-            return "连接失败: \(reason)"
+            return "Connection failed: \(reason)"
         case .connectionTimeout:
-            return "连接超时"
+            return "Connection timeout"
         case .connectionRefused:
-            return "连接被拒绝"
+            return "Connection refused"
         case .networkUnreachable:
-            return "网络不可达"
+            return "Network unreachable"
         case .hostResolutionFailed(let host):
-            return "无法解析主机名: \(host)"
+            return "Failed to resolve host: \(host)"
 
         // 认证错误
         case .authenticationError(let reason):
-            return "认证失败: \(reason)"
+            return "Authentication failed: \(reason)"
         case .invalidCredentials:
-            return "用户名或密码错误"
+            return "Invalid username or password"
         case .publicKeyRejected:
-            return "公钥被拒绝"
+            return "Public key rejected"
         case .privateKeyNotFound(let path):
-            return "私钥文件未找到: \(path)"
+            return "Private key not found: \(path)"
         case .invalidPassphrase:
-            return "私钥密码错误"
+            return "Invalid passphrase"
 
         // 静默信道错误
         case .silentChannelError(let reason):
-            return "静默信道错误: \(reason)"
+            return "Silent channel error: \(reason)"
         case .silentChannelUnavailable:
-            return "静默信道不可用"
+            return "Silent channel unavailable"
         case .silentChannelCreationFailed:
-            return "静默信道创建失败"
+            return "Failed to create silent channel"
 
         // 会话错误
         case .sessionNotFound(let id):
-            return "会话未找到: \(id)"
+            return "Session not found: \(id)"
         case .sessionAlreadyConnected:
-            return "会话已连接"
+            return "Session already connected"
         case .sessionClosed:
-            return "会话已关闭"
+            return "Session closed"
         case .invalidSessionState(let current, let expected):
-            return "无效的会话状态: 当前为 \(current)，期望为 \(expected)"
+            return "Invalid session state: current is \(current), expected \(expected)"
 
         // 数据传输错误
         case .sendFailed(let reason):
-            return "发送失败: \(reason)"
+            return "Send failed: \(reason)"
         case .receiveFailed(let reason):
-            return "接收失败: \(reason)"
+            return "Receive failed: \(reason)"
         case .dataEncodingFailed:
-            return "数据编码失败"
+            return "Data encoding failed"
 
         // 配置错误
         case .invalidConfiguration(let reason):
-            return "无效配置: \(reason)"
+            return "Invalid configuration: \(reason)"
         case .missingRequiredField(let field):
-            return "缺少必需字段: \(field)"
+            return "Missing required field: \(field)"
 
         // 串口错误
         case .serialPortNotFound(let path):
-            return "串口未找到: \(path)"
+            return "Serial port not found: \(path)"
         case .serialPortBusy(let path):
-            return "串口被占用: \(path)"
+            return "Serial port busy: \(path)"
         case .invalidBaudRate(let rate):
-            return "无效的波特率: \(rate)"
+            return "Invalid baud rate: \(rate)"
         }
     }
 
@@ -190,17 +190,17 @@ public enum CognisError: Error, Sendable, LocalizedError, Equatable {
     public var recoverySuggestion: String? {
         switch self {
         case .connectionTimeout:
-            return "请检查网络连接和防火墙设置"
+            return "Check your network connection and firewall settings"
         case .connectionRefused:
-            return "请确认远程主机的 SSH 服务是否正在运行"
+            return "Ensure the SSH service is running on the remote host"
         case .invalidCredentials:
-            return "请检查用户名和密码是否正确"
+            return "Verify your username and password"
         case .publicKeyRejected:
-            return "请确认公钥已添加到远程主机的 authorized_keys"
+            return "Ensure your public key is added to the remote host's authorized_keys"
         case .privateKeyNotFound:
-            return "请检查私钥文件路径是否正确"
+            return "Check if the private key file path is correct"
         case .serialPortBusy:
-            return "请关闭其他使用该串口的程序"
+            return "Close other applications using this serial port"
         default:
             return nil
         }

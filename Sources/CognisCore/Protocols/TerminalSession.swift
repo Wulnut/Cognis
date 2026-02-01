@@ -149,7 +149,7 @@ public extension TerminalSession {
 /// ```
 /// disconnected → connecting → connected → reconnecting → connected
 ///      ↓              ↓            ↓            ↓
-///    error ←─────────┴────────────┴────────────┘
+///    error  ←─────────┴────────────┴────────────┘
 /// ```
 ///
 public enum SessionState: Sendable, Equatable {
