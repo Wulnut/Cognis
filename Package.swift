@@ -14,10 +14,15 @@ let package = Package(
             name: "CognisCore",
             targets: ["CognisCore"]
         ),
+        // CognisApp: macOS 可执行应用
+        .executable(
+            name: "CognisApp",
+            targets: ["CognisApp"]
+        ),
     ],
     dependencies: [
-        // 未来依赖：
-        // .package(url: "https://github.com/migueldeicaza/SwiftTerm", from: "1.2.0"),
+        // 终端仿真渲染
+        .package(url: "https://github.com/migueldeicaza/SwiftTerm.git", from: "1.0.0"),
         // .package(url: "https://github.com/armadsen/ORSSerialPort", from: "2.1.0"),
     ],
     targets: [
@@ -26,6 +31,15 @@ let package = Package(
             name: "CognisCore",
             dependencies: [],
             path: "Sources/CognisCore"
+        ),
+        // CognisApp 应用目标
+        .executableTarget(
+            name: "CognisApp",
+            dependencies: [
+                "CognisCore",
+                .product(name: "SwiftTerm", package: "SwiftTerm")
+            ],
+            path: "Sources/CognisApp"
         ),
         // 测试目标
         .testTarget(
