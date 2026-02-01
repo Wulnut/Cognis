@@ -1,6 +1,9 @@
 # Cognis
 
 [![CI](https://github.com/Wulnut/Cognis/actions/workflows/swift.yml/badge.svg)](https://github.com/Wulnut/Cognis/actions/workflows/swift.yml)
+![Swift 5.10](https://img.shields.io/badge/Swift-5.10-orange.svg)
+![Platform macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
+![License Private](https://img.shields.io/badge/license-Private-red.svg)
 
 Cognis 是一款 macOS 原生智能终端管理器，结合了 MobaXterm 的强大功能与 Termius 的现代视觉体验。
 
