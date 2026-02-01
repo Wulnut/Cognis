@@ -5,6 +5,11 @@
 ![Platform macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![License Private](https://img.shields.io/badge/license-Private-red.svg)
 
+[![Issues](https://img.shields.io/github/issues/Wulnut/Cognis)](https://github.com/Wulnut/Cognis/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/Wulnut/Cognis)](https://github.com/Wulnut/Cognis/pulls)
+[![Last Commit](https://img.shields.io/github/last-commit/Wulnut/Cognis)](https://github.com/Wulnut/Cognis/commits/main)
+[![Repo Size](https://img.shields.io/github/repo-size/Wulnut/Cognis)](https://github.com/Wulnut/Cognis)
+
 Cognis 是一款 macOS 原生智能终端管理器，结合了 MobaXterm 的强大功能与 Termius 的现代视觉体验。
 
 ## 🚀 项目愿景
